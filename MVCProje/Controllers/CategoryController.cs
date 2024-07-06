@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using EntityLayer.Concrete;
 
 namespace MVCProje.Controllers
 {
@@ -11,6 +12,7 @@ namespace MVCProje.Controllers
     {
         // GET: Category
         CategoryManager cm = new CategoryManager();
+
         public ActionResult Index()
         {
             return View();
@@ -21,5 +23,19 @@ namespace MVCProje.Controllers
             var categoryvalues = cm.GetAllBL();
             return View(categoryvalues);
         }
+
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddCategory(Category p)
+        {
+            cm.CategoryAddBL(p);
+            return RedirectToAction("GetCategoryList");
+        }
+
     }
 }
