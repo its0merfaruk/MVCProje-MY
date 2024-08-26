@@ -135,6 +135,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -2016,6 +2018,20 @@
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Theme\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="Theme\AdminLTE-3.0.4\starter.html" />
+    <Content Include="Theme\colorlib-error-404-10\css\style.css" />
+    <Content Include="Theme\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="Theme\colorlib-error-404-10\index.html" />
+    <Content Include="Theme\colorlib-error-404-10\readme.txt" />
+    <Content Include="Theme\images\Amsterdam.jpg" />
+    <Content Include="Theme\images\Barcelona.jpg" />
+    <Content Include="Theme\images\Istanbul.jpg" />
+    <Content Include="Theme\images\London.jpg" />
+    <Content Include="Theme\images\New York.jpg" />
+    <Content Include="Theme\images\Paris.jpg" />
+    <Content Include="Theme\images\Sidney.jpg" />
+    <Content Include="Theme\images\Tokyo.jpg" />
+    <Content Include="Theme\images\Vancouver.jpg" />
+    <Content Include="Theme\images\Venedik.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2313,6 +2329,8 @@
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
     <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
