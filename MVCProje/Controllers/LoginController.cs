@@ -36,5 +36,29 @@ namespace MVCProje.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult WriterLogin(Writer p)
+        {
+            Context c = new Context();
+            var writeruserinfo = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.adminPassword == p.adminPassword);
+            if (adminuserinfo != null)
+            {
+                FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName, false);
+                Session["AdminUserName"] = adminuserinfo.AdminUserName;
+                return RedirectToAction("Index", "AdminCategory");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
