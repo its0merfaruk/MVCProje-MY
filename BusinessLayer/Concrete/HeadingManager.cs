@@ -9,7 +9,7 @@ using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class HeadingManager:IHeadingService
+    public class HeadingManager : IHeadingService
     {
         IHeadingDal _headingDal;
 
@@ -22,9 +22,9 @@ namespace BusinessLayer.Concrete
             return _headingDal.List();
         }
 
-        public List<Heading> GetListByWriter()
+        public List<Heading> GetListByWriter(int id)
         {
-            return _headingDal.List(x => x.WriterID == 4);
+            return _headingDal.List(x => x.WriterID == id);
         }
 
         public void HeadingAdd(Heading heading)

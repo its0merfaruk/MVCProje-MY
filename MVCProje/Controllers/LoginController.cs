@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace MVCProje.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
@@ -47,16 +48,16 @@ namespace MVCProje.Controllers
         public ActionResult WriterLogin(Writer p)
         {
             Context c = new Context();
-            var writeruserinfo = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.adminPassword == p.adminPassword);
-            if (adminuserinfo != null)
+            var writeruserinfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            if (writeruserinfo != null)
             {
-                FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName, false);
-                Session["AdminUserName"] = adminuserinfo.AdminUserName;
-                return RedirectToAction("Index", "AdminCategory");
+                FormsAuthentication.SetAuthCookie(writeruserinfo.WriterMail, false);
+                Session["WriterMail"] = writeruserinfo.WriterMail;
+                return RedirectToAction("MyContent", "WriterPanelContent");
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("WriterLogin");
             }
             return View();
         }

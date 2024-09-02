@@ -2587,6 +2587,7 @@
     <Content Include="Theme\login-form-20\scss\bootstrap\_utilities.scss" />
     <Content Include="Theme\login-form-20\scss\bootstrap\_variables.scss" />
     <Content Include="Theme\login-form-20\scss\style.scss" />
+    <Content Include="Views\Login\WriterLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
