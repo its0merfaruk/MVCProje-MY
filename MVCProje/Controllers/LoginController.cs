@@ -26,7 +26,7 @@ namespace MVCProje.Controllers
             var adminuserinfo = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.adminPassword == p.adminPassword);
             if (adminuserinfo != null)
             {
-                FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName,false);
+                FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName, false);
                 Session["AdminUserName"] = adminuserinfo.AdminUserName;
                 return RedirectToAction("Index", "AdminCategory");
             }
@@ -60,6 +60,12 @@ namespace MVCProje.Controllers
                 return RedirectToAction("WriterLogin");
             }
             return View();
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default"); 
         }
     }
 }
