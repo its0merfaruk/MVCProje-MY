@@ -32,5 +32,11 @@ namespace MVCProje.Controllers
             return View();
 
         }
+
+        [AllowAnonymous]
+        public ActionResult HomePage()
+        {
+            return View();
+        }
     }
 }

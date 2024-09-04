@@ -56,6 +56,12 @@
       <HintPath>..\packages\FluentValidation.10.0.4\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -170,6 +176,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -2078,6 +2085,48 @@
     <Content Include="Theme\skills-profile\js\jquery-1.11.1.min.js" />
     <Content Include="Theme\skills-profile\js\jquery.circlechart.js" />
     <Content Include="Theme\skills-profile\w3layouts-License.txt" />
+    <Content Include="Theme\Vitrin\css\aos-animation.css" />
+    <Content Include="Theme\Vitrin\css\aos.css" />
+    <Content Include="Theme\Vitrin\css\bootstrap.css" />
+    <Content Include="Theme\Vitrin\css\fontawesome-all.css" />
+    <Content Include="Theme\Vitrin\css\roadmap.css" />
+    <Content Include="Theme\Vitrin\css\simpleLightbox.css" />
+    <Content Include="Theme\Vitrin\css\snow.css" />
+    <Content Include="Theme\Vitrin\css\style.css" />
+    <Content Include="Theme\Vitrin\images\banner.jpg" />
+    <Content Include="Theme\Vitrin\images\close.png" />
+    <Content Include="Theme\Vitrin\images\contact.jpg" />
+    <Content Include="Theme\Vitrin\images\exp.jpg" />
+    <Content Include="Theme\Vitrin\images\g1.jpg" />
+    <Content Include="Theme\Vitrin\images\g2.jpg" />
+    <Content Include="Theme\Vitrin\images\g3.jpg" />
+    <Content Include="Theme\Vitrin\images\g4.jpg" />
+    <Content Include="Theme\Vitrin\images\g5.jpg" />
+    <Content Include="Theme\Vitrin\images\g6.jpg" />
+    <Content Include="Theme\Vitrin\images\g7.jpg" />
+    <Content Include="Theme\Vitrin\images\g8.jpg" />
+    <Content Include="Theme\Vitrin\images\g9.jpg" />
+    <Content Include="Theme\Vitrin\images\loader.gif" />
+    <Content Include="Theme\Vitrin\images\move_up.png" />
+    <Content Include="Theme\Vitrin\images\next.png" />
+    <Content Include="Theme\Vitrin\images\prev.png" />
+    <Content Include="Theme\Vitrin\images\serve.jpg" />
+    <Content Include="Theme\Vitrin\images\stats.jpg" />
+    <Content Include="Theme\Vitrin\images\testimonials.jpg" />
+    <Content Include="Theme\Vitrin\index.html" />
+    <Content Include="Theme\Vitrin\js\aos.js" />
+    <Content Include="Theme\Vitrin\js\bootstrap.js" />
+    <Content Include="Theme\Vitrin\js\easing.js" />
+    <Content Include="Theme\Vitrin\js\jquery-2.2.3.min.js" />
+    <Content Include="Theme\Vitrin\js\jquery.countup.js" />
+    <Content Include="Theme\Vitrin\js\jquery.roadmap.js" />
+    <Content Include="Theme\Vitrin\js\jquery.waypoints.min.js" />
+    <Content Include="Theme\Vitrin\js\move-top.js" />
+    <Content Include="Theme\Vitrin\js\simpleLightbox.js" />
+    <Content Include="Theme\Vitrin\w3layouts-license.txt" />
+    <Content Include="Theme\Vitrin\webfonts\fa-brands-400.svg" />
+    <Content Include="Theme\Vitrin\webfonts\fa-regular-400.svg" />
+    <Content Include="Theme\Vitrin\webfonts\fa-solid-900.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2594,6 +2643,20 @@
     <Content Include="Views\WriterPanel\AllHeading.cshtml" />
     <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
     <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
+    <Content Include="Views\Test\ToDo.cshtml" />
+    <Content Include="Theme\Vitrin\webfonts\fa-brands-400.eot" />
+    <Content Include="Theme\Vitrin\webfonts\fa-brands-400.ttf" />
+    <Content Include="Theme\Vitrin\webfonts\fa-brands-400.woff" />
+    <Content Include="Theme\Vitrin\webfonts\fa-brands-400.woff2" />
+    <Content Include="Theme\Vitrin\webfonts\fa-regular-400.eot" />
+    <Content Include="Theme\Vitrin\webfonts\fa-regular-400.ttf" />
+    <Content Include="Theme\Vitrin\webfonts\fa-regular-400.woff" />
+    <Content Include="Theme\Vitrin\webfonts\fa-regular-400.woff2" />
+    <Content Include="Theme\Vitrin\webfonts\fa-solid-900.eot" />
+    <Content Include="Theme\Vitrin\webfonts\fa-solid-900.ttf" />
+    <Content Include="Theme\Vitrin\webfonts\fa-solid-900.woff" />
+    <Content Include="Theme\Vitrin\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Home\HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

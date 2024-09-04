@@ -18,5 +18,9 @@ namespace MVCProje.Controllers
         {
             return View();
         }
+        public ActionResult ToDo()
+        {
+            return View();
+        }
     }
 }
