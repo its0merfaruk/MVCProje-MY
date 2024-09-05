@@ -51,7 +51,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         @if (User.IsInRole("B"))
                         {
                             <li class="nav-item has-treeview">
@@ -70,6 +70,14 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Başlıklar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Writer/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-book-reader"></i>
+                                <p>
+                                    Yazılar
                                 </p>
                             </a>
                         </li>
@@ -151,7 +159,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Home/HomePage/" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Siteye Git
