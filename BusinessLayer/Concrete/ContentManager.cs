@@ -17,16 +17,16 @@ namespace BusinessLayer.Concrete
             _contentDal = contentDal;
         }
 
-        public List<Content> GetList()
+        public List<Content> GetList(string p)
         {
-            return _contentDal.List();
+            return _contentDal.List(x => x.ContentValue.Contains(p));
         }
 
         public List<Content> GetListByHeadingID(int id)
         {
             return _contentDal.List(x => x.HeadingID == id);
         }
-        
+
         public void ContentAdd(Content content)
         {
             _contentDal.Insert(content);
