@@ -12,9 +12,10 @@
 <button class="btn btn-success" id="btn3">Button3</button>
 <button class="btn btn-danger" id="btn4">Button4</button>
 <button class="btn btn-info" id="btn5">Button5</button>
+<button class="btn btn-app" id="btn6">Button6</button>
 
 <script>
-    $('#btn1').click(function() {
+    $('#btn1').click(function () {
         swal("Hello world!");
     })
 </script>
@@ -40,6 +41,27 @@
 <script>
     $('#btn5').click(function () {
         swal("Good job!", "You clicked the button!", "info");
+    })
+</script>
+
+<script>
+    $('#btn6').click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
     })
 </script>
 

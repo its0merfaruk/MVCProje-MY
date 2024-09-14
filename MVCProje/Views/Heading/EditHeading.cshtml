@@ -5,25 +5,80 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<script src="~/Scripts/jquery-3.7.0.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <h2>Başlık Düzenleme Sayfası</h2>
 @using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
 {
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
     <div class="form-group">
-        @Html.Label("Başlık ID")
-        @Html.TextBoxFor(x => x.HeadingID, new { @class = "form-control" })
-        <br />
+        @Html.HiddenFor(x => x.HeadingID, new { @class = "form-control" })
+
         @Html.Label("Başlık Adı")
         @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
         <br />
         @Html.Label("Tarih")
-        @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control", @id = "HeadingDate" })
+        @*@Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })*@
         <br />
-        @Html.Label("Yazar ID")
-        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+        @Html.Label("Yazar")
+        @Html.DropDownListFor(x => x.WriterID, (List<SelectListItem>)ViewBag.writer, new { @class = "form-control" })
         <br />
         @Html.Label("Kategori Adı")
-        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
         <br />
-        <button class="btn btn-success">Güncelle</button>
+        <button class="btn btn-success" id="btnupdate">Güncelle</button>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#HeadingDate').datepicker({
+                format: 'dd-mm-yyyy',
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
+
+    <script>
+        $('#btnupdate').click(function (e) {
+            e.preventDefault(); // Formun otomatik olarak gönderilmesini engeller
+            swal({
+                title: "Başlığı güncellemek istediğinize emin misiniz?",
+                text: "Bu işlemi onaylarsanız, kategori güncellenecek.",
+                icon: "success",
+                buttons: {
+                    cancel: {
+                        text: "İptal",
+                        value: null,
+                        visible: true,
+                        className: "btn-danger",  // İptal butonu için özel renk
+                        closeModal: true,
+                    },
+                    confirm: {
+                        text: "Güncelle!",  // OK butonunun yeni yazısı
+                        value: true,
+                        visible: true,
+                        className: "btn-warning",  // OK butonunun rengi (Bootstrap'den btn-success kullanıyoruz)
+                        closeModal: true
+                    }
+                },
+                dangerMode: true
+            })
+                .then((willAdd) => {
+                    if (willAdd) {
+                        // Formu manuel olarak gönderiyoruz
+                        $('form').submit();
+                    } else {
+                        swal("Kategori ekleme işlemi iptal edildi.");
+                    }
+                });
+
+        });
+    </script>
 }
+
+

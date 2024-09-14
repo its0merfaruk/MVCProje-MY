@@ -33,19 +33,19 @@ namespace MVCProje.Controllers
         public ActionResult AddHeading()
         {
             List<SelectListItem> valuecategory = (from x in cm.GetList()
-                select new SelectListItem
-                {
-                    Text = x.CategoryName,
-                    Value = x.CategoryID.ToString()
-                }).ToList();
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
             List<SelectListItem> valuewriter = (from x in wm.GetList()
-                select new SelectListItem
-                {
-                    Text = x.WriterName + " " + x.WriterSurName,
-                    Value = x.WriterID.ToString()
-                }).ToList();
-            ViewBag.vlc = valuecategory;
-            ViewBag.vlc = valuewriter;
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.WriterName + " " + x.WriterSurName,
+                                                    Value = x.WriterID.ToString()
+                                                }).ToList();
+            ViewBag.category = valuecategory;
+            ViewBag.writer = valuewriter;
             return View();
         }
 
@@ -61,16 +61,23 @@ namespace MVCProje.Controllers
         public ActionResult EditHeading(int id)
         {
             List<SelectListItem> valuecategory = (from x in cm.GetList()
-                select new SelectListItem
-                {
-                    Text = x.CategoryName,
-                    Value = x.CategoryID.ToString()
-                }).ToList();
-            ViewBag.vlc = valuecategory;
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.CategoryName,
+                                                      Value = x.CategoryID.ToString()
+                                                  }).ToList();
+            List<SelectListItem> valuewriter = (from x in wm.GetList()
+                                                select new SelectListItem
+                                                {
+                                                    Text = x.WriterName + " " + x.WriterSurName,
+                                                    Value = x.WriterID.ToString()
+                                                }).ToList();
+            ViewBag.category = valuecategory;
+            ViewBag.writer = valuewriter;
             var headingvalues = hm.GetById(id);
             return View(headingvalues);
         }
-        
+
         [HttpPost]
         public ActionResult EditHeading(Heading p)
         {

@@ -24,7 +24,7 @@
             <td>@item.CategoryName</td>
             <td>@item.CategoryDescription</td>
             <td>@item.CategoryStatus</td>
-            <td><a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+            <td><a href="javascript:void(0);" class="btn btn-danger delete-btn" data-id="@item.CategoryID">Sil</a></td>
             <td><a href="/AdminCategory/EditCategory/@item.CategoryID" class="btn btn-warning">Güncelle</a></td>
             <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
         </tr>
@@ -32,3 +32,28 @@
 </table>
 <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.7.0.js"></script>
+
+<script>// Sil butonuna tıklama olayını dinleyen jQuery kodu
+    $('.delete-btn').click(function (e) {
+        e.preventDefault(); // Varsayılan link davranışını durdur
+        var categoryId = $(this).data('id'); // Tıklanan kategori ID'sini al
+
+        // SweetAlert uyarısı
+        swal({
+            title: "Bu kategoriyi silmek istediğinizden emin misiniz?",
+            text: "Bu işlem geri alınamaz!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                // Eğer kullanıcı onaylarsa, silme işlemine yönlendir
+                window.location.href = '/AdminCategory/DeleteCategory/' + categoryId;
+            } else {
+                swal("Silme işlemi iptal edildi.");
+            }
+        });
+    });</script>
